@@ -326,13 +326,13 @@ def main():
 
     while True:
         print("\nMenú de Opciones:")
-        print("1. Configurar Salas.")  
-        print("2. Reservar Asientos.")  
-        print("3. Ver Reportes.")
-        print("4. Gestionar Empleados.")
-        print("5. Gestion de pagos y facturas.")
-        print("6. logerrores.")
-        print("7. Salir.") 
+        print("1. ---> Configurar Salas.")  
+        print("2. ---> Reservar Asientos.")  
+        print("3. ---> Ver Reportes.")
+        print("4. ---> Gestionar Empleados.")
+        print("5. ---> Gestion de pagos y facturas.")
+        print("6. ---> logerrores.")
+        print("7. ---> Salir.") 
         opcion = input("Seleccione una opción: ")
         if opcion == "1": 
             salas = configurar_salas()  

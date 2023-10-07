@@ -325,6 +325,7 @@ def error(e):
 def main():
 
     while True:
+        print('<------------------------------------>')
         print("\nMenú de Opciones:")
         print("1. Configurar Salas.")  
         print("2. Reservar Asientos.")  
@@ -333,6 +334,7 @@ def main():
         print("5. Gestion de pagos y facturas.")
         print("6. logerrores.")
         print("7. Salir.") 
+        print('<------------------------------------>')
         opcion = input("Seleccione una opción: ")
         if opcion == "1": 
             salas = configurar_salas()  
