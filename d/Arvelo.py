@@ -2,7 +2,6 @@ empleados = []
 import datetime
 ahora = datetime.datetime.now()
 logerror = []
-csv = []
 def configurar_salas():
     salas = []
     try:
