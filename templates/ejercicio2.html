@@ -22,5 +22,16 @@
         >
         <button>Verificar</button>
     </form>
+    {% if username == 'juan' and password == 'admin'%}
+        <h2>Bienvenido administrador {{ username }}</h2>
+    {% endif %}
+
+    {% if username == 'pepe' and password == 'user'%}
+        <h2>Bienvenido usuario {{ username }}</h2>
+    {% endif %}
+
+    {% if username != 'juan' and username != 'pepe' and password != 'admin' and password != 'user' %}
+        <h2>Usuario o contraseña incorrectos</h2>
+    {% endif %}
 </body>
 </html>

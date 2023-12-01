@@ -7,6 +7,12 @@
 </head>
 <body>
     <h1>Ejercicio 1</h1>
+    {% if name %}
+        <h2>Nombre: {{ name }}</h2>
+    {% endif %}
+    {% if age %}
+        <h2>Edad: {{ age }}</h2>
+    {% endif %}
     <form action="/calculate" method="post">
         <h1>Calculo de compras</h1>
         <h2>Ingresa tu nombre</h2>
@@ -22,7 +28,29 @@
         placeholder="Ingrese su edad"
         >
         <h2>Ingrese la cantidad de tarros de pintura a comprar</h2>
+        <input
+        type="text"
+        name="paint"
+        placeholder="Ingrese la cantidad de tarros de pintura a comprar"
+        >
         <button>Calcular</button>
     </form>
+    {% if name and age and paint %}
+        {% if age < 18 %}
+            <h2>Total sin descuento: ${{ 9000 * paint }}</h2>
+            <h2>El descuento es: $0</h2>
+            <h2>El total a pagar es de: ${{ 9000 * paint }}</h2>
+        {% endif %}
+        {% if age >= 18 and age <= 30 %}
+            <h2>Total sin descuento: ${{ 9000 * paint }}</h2>
+            <h2>El descuento es de: ${{ 9000 * paint * 15 / 100 }}</h2>
+            <h2>El total a pagar es de: ${{ 9000 * paint - 9000 * paint * 15 / 100 }}</h2>
+        {% endif %}
+        {% if age > 30 %}
+            <h2>Total sin descuento: ${{ 9000 * paint }}</h2>
+            <h2>El descuento es de: ${{ 9000 * paint * 25 / 100 }}</h2>
+            <h2>El total a pagar es de: ${{ 9000 * paint - 9000 * paint * 25 / 100 }}</h2>
+        {% endif %}
+    {% endif %}
 </body>
 </html>
